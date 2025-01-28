@@ -1,0 +1,21 @@
+The solution is to avoid using `@apply` with complex selectors.  Instead, apply the styles directly within the HTML or through a custom CSS class.
+
+```html
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded hover:border-red-500">
+  Click Me
+</button>
+```
+
+This ensures the styles are applied correctly to the hover state.  Alternatively, define the styles in a separate CSS class and apply that class:
+
+```html
+<button class="bg-blue-500 text-white font-bold py-2 px-4 rounded custom-hover">
+  Click Me
+</button>
+
+<style>
+.custom-hover {
+  @apply hover:bg-blue-700 hover:border-red-500;
+}
+</style>
+```
